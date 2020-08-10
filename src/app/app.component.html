@@ -1,0 +1,38 @@
+<div class="page-wrapper">
+  <!-- Header -->
+  <header class="app-header">
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h1>Angular theme</h1>
+      <span class="spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-toolbar>
+  </header>
+  <!-- Sidenav -->
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+      <mat-nav-list>
+        <a mat-list-item href="/">Home</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <!-- Main -->
+      <main class="app-main" role="main">
+        <div class="main-inner">
+          <router-outlet></router-outlet>
+        </div>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <!-- Footer -->
+  <footer class="app-footer">
+    Angular Theme, 2020
+  </footer>
+</div>
